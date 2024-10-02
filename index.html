@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="10"> <!-- Sayfa her 10 saniyede bir yenilenecek -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıcaklık Verisi</title>
+</head>
+<body>
+    <h1>Canlı Sıcaklık Verisi</h1>
+
+    <p>Son sıcaklık verisi:</p>
+    <h2>
+        <?php
+        // Veriyi okuyoruz (veri.txt)
+        $file = 'veri.txt';
+        if (file_exists($file)) {
+            $temp = file_get_contents($file);
+            echo $temp . " °C";
+        } else {
+            echo "Henüz veri yok!";
+        }
+        ?>
+    </h2>
+</body>
+</html>
